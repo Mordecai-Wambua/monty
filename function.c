@@ -56,6 +56,7 @@ void m_push(stack_t **stack, unsigned int line_number)
 void stack_add(stack_t **h, int x)
 {
 	stack_t *new, *tmp;
+
 	tmp = *h;
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
@@ -72,7 +73,8 @@ void stack_add(stack_t **h, int x)
 }
 
 /**
- * m_pall - prints all the values on the stack, starting from the top of the stack
+ * m_pall - prints all the values on the stack,
+ * starting from the top of the stack
  * @stack: pointer of pointer to actual stack
  * @line_number: file line number
  *

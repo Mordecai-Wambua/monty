@@ -19,11 +19,11 @@ int getfunc(char *line, stack_t **stack, unsigned int l, FILE *file)
 
 	unsigned int a = 0;
 	char *inst = strtok(line, " \n");
+
 	if (inst && inst[0] == '#')
 		return (0);
 
 	arg->val = strtok(NULL, " \n");
-	
 	while (ops[a].opcode && inst)
 	{
 		if (inst && strcmp(line, ops[a].opcode) == 0)

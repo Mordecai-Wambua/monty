@@ -39,7 +39,7 @@ typedef struct instruction_s
 
 
 /**
- * struct bus_s - avail info
+ * struct arguments - avail info
  * @montyfile: points to the actual file
  * @line: contents of a specific line in the file
  * @l: line number

@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	arg->l = 0;
 	mfile = fopen(argv[1], "r");
 	arg->montyfile = mfile;
-	if (arg->montyfile == NULL || mfile == NULL) 
+	if (arg->montyfile == NULL || mfile == NULL)
 	{
 		fileopen(argv[1]);
 	}
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 void frees(stack_t *h)
 {
 	stack_t *a = h;
-	
+
 	if (h == NULL)
 	{
 		return;
