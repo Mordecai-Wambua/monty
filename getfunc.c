@@ -14,6 +14,7 @@ int getfunc(char *line, stack_t **stack, unsigned int l, FILE *file)
 	instruction_t ops[] = {
 		{"pall", m_pall},
 		{"push", m_push},
+		{"pint", m_pint},
 		{NULL, NULL}
 	};
 

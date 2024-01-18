@@ -90,3 +90,23 @@ void m_pall(stack_t **stack, unsigned int line_number)
 		a = a->next;
 	}
 }
+
+/**
+ * m_pint - prints the value at the top of the stack,
+ * followed by a new line
+ * @stack: pointer of pointer to actual stack
+ * @line_number: file line number
+ *
+ */
+void m_pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n",line_number);
+		fclose(arg->montyfile);
+		free(arg->line);
+		frees(*stack);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n",(*stack)->n);
+}
