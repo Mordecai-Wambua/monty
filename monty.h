@@ -42,21 +42,24 @@ typedef struct instruction_s
  * struct bus_s - avail info
  * @montyfile: points to the actual file
  * @line: contents of a specific line in the file
+ * @l: line number
+ * @val: actual value
  * Desription: avail this to all program functions
  */
 typedef struct arguments
 {
 	FILE *montyfile;
 	char *line;
+	unsigned int l;
+	char *val;
 } arguments_t;
 extern arguments_t *arg;
 
-
+void stack_add(stack_t **h, int x);
 void malloc_fail(void);
 void fileopen(char *f);
-/*
-void m_push(stack_t **stack, unsigned int line_number)
+int getfunc(char *line, stack_t **stack, unsigned int l, FILE *file);
+void m_push(stack_t **stack, unsigned int line_number);
 void m_pall(stack_t **stack, unsigned int line_number);
 void frees(stack_t *h);
-*/
 #endif
