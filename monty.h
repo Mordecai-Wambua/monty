@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -35,8 +37,26 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void getfunc(cmds, stack);
-void push_func(stack_t **stack, unsigned int line_number);
-void pall_func(stack_t **stack, unsigned int line_number);
 
+/**
+ * struct bus_s - avail info
+ * @montyfile: points to the actual file
+ * @line: contents of a specific line in the file
+ * Desription: avail this to all program functions
+ */
+typedef struct arguments
+{
+	FILE *montyfile;
+	char *line;
+} arguments_t;
+extern arguments_t *arg;
+
+
+void malloc_fail(void);
+void fileopen(char *f);
+/*
+void m_push(stack_t **stack, unsigned int line_number)
+void m_pall(stack_t **stack, unsigned int line_number);
+void frees(stack_t *h);
+*/
 #endif

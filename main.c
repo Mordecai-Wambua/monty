@@ -1,5 +1,8 @@
+#include <stdio.h>
 #include "monty.h"
 
+arguments_t *arg = NULL;
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 /**
  * main - program entry
  * @argc: argument count
@@ -10,28 +13,30 @@
 int main(int argc, char *argv[])
 {
 	FILE *mfile;
-	int i = 0;
-	size_t buffer = 1000;
-	stack_t *stack = NULL;
-	static char *cmds[1000] = {NULL};
+	size_t i = 0;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	mfile = fopen(argv[1], "r");
-	if (mfile == NULL)
+
+	arg = malloc(sizeof(arguments_t));
+	if (arg == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
+		malloc_fail();
 	}
-
-	for (i = 0; getline(&(cmds[i]), &buffer, mfile) > 0; i++)
-		;
-
-	getfunc(cmds, stack);
-	fclose(mfile);
-
+	arg->montyfile = NULL;
+	arg->line = NULL;
+	mfile = fopen(argv[1], "r");
+	arg->montyfile = mfile;
+	if (arg->montyfile == NULL || mfile == NULL) 
+	{
+		fileopen(argv[1]);
+	}
+	while (getline(&arg->line, &i, arg->montyfile) != -1)
+	{
+		printf("%s", arg->line);
+	}
 	return (0);
 }
