@@ -29,8 +29,7 @@ void m_push(stack_t **stack, unsigned int line_number)
 		if (!z)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			fclose(arg->montyfile);
-			free(arg->line);
+			all_free();
 			frees(*stack);
 			exit(EXIT_FAILURE);
 		}
@@ -38,8 +37,7 @@ void m_push(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		fclose(arg->montyfile);
-		free(arg->line);
+		all_free();
 		frees(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -103,10 +101,31 @@ void m_pint(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n",line_number);
-		fclose(arg->montyfile);
-		free(arg->line);
+		all_free();
 		frees(*stack);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n",(*stack)->n);
+}
+
+/**
+ * m_pop - removes the top element of the stack
+ * @stack: pointer of pointer to actual stack
+ * @line_number: file line number
+ *
+ */
+void m_pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n",line_number);
+		all_free();
+		frees(*stack);
+		exit(EXIT_FAILURE);
+	}
+	temp = *stack;
+	*stack = temp->next;
+	free(temp);
 }

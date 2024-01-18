@@ -75,3 +75,13 @@ void frees(stack_t *h)
 		free(a);
 	}
 }
+
+/**
+ * all_free - frees all allocated memory
+ *
+ */
+void all_free(void)
+{
+	fclose(arg->montyfile);
+	free(arg->line);
+}

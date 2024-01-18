@@ -15,6 +15,7 @@ int getfunc(char *line, stack_t **stack, unsigned int l, FILE *file)
 		{"pall", m_pall},
 		{"push", m_push},
 		{"pint", m_pint},
+		{"pop", m_pop},
 		{NULL, NULL}
 	};
 
