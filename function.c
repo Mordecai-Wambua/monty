@@ -100,12 +100,12 @@ void m_pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n",line_number);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		all_free();
 		frees(*stack);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n",(*stack)->n);
+	printf("%d\n", (*stack)->n);
 }
 
 /**
@@ -120,7 +120,7 @@ void m_pop(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n",line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		all_free();
 		frees(*stack);
 		exit(EXIT_FAILURE);
