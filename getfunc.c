@@ -19,6 +19,10 @@ int getfunc(char *line, stack_t **stack, unsigned int l, FILE *file)
 		{"swap", m_swap},
 		{"add", m_add},
 		{"nop", m_nop},
+		{"sub", m_sub},
+		{"div", m_div},
+		{"mul", m_mul},
+		{"mod", m_mod},
 		{NULL, NULL}
 	};
 
