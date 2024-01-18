@@ -18,15 +18,15 @@ int getfunc(char *line, stack_t **stack, unsigned int l, FILE *file)
 	};
 
 	unsigned int a = 0;
-	char *inst = strtok(line, " \n");
+	char *inst = strtok(line, " \n\t");
 
 	if (inst && inst[0] == '#')
 		return (0);
 
-	arg->val = strtok(NULL, " \n");
+	arg->val = strtok(NULL, " \n\t");
 	while (ops[a].opcode && inst)
 	{
-		if (inst && strcmp(line, ops[a].opcode) == 0)
+		if (strcmp(inst, ops[a].opcode) == 0)
 		{
 			ops[a].f(stack, l);
 			return (0);

@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
 	}
 	frees(list);
 	fclose(mfile);
+	free(arg);
 	return (0);
 }
 
