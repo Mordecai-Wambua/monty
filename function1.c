@@ -56,3 +56,15 @@ void m_add(stack_t **stack, unsigned int line_number)
 	*stack = temp1;
 	free(temp);
 }
+
+/**
+ * m_nop - doesn't do anything
+ * @stack: pointer of pointer to actual stack
+ * @line_number: file line number
+ *
+ */
+void m_add(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+}
