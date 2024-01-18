@@ -63,7 +63,7 @@ void m_add(stack_t **stack, unsigned int line_number)
  * @line_number: file line number
  *
  */
-void m_add(stack_t **stack, unsigned int line_number)
+void m_nop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
 	(void) line_number;
