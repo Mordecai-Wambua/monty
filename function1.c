@@ -12,7 +12,7 @@ void m_swap(stack_t **stack, unsigned int line_number)
 
 	if ((*stack) == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		all_free();
 		frees(*stack);
 		exit(EXIT_FAILURE);
@@ -45,7 +45,7 @@ void m_add(stack_t **stack, unsigned int line_number)
 
 	if ((*stack) == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short", line_number);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		all_free();
 		frees(*stack);
 		exit(EXIT_FAILURE);
