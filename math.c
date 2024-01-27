@@ -45,7 +45,7 @@ void m_div(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	temp1 = temp->next;
-	if (temp1->n == 0)
+	if (temp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		all_free();
@@ -102,7 +102,7 @@ void m_mod(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	temp1 = temp->next;
-	if (temp1->n == 0)
+	if (temp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		all_free();
